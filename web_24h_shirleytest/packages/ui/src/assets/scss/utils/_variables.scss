@@ -1,0 +1,63 @@
+// Breakpoints
+$bp-mobile:"min-width: 576px";
+$bp-phablet:"min-width: 768px";
+$bp-pad:"min-width: 992px";
+$bp-desktop:"min-width: 1240px";
+$bp-desktophd:"min-width: 1440px";
+
+//Globals
+$line-height:1.5;
+
+// Font variables
+$font-family:"Roboto", Helvetica, Arial, sans-serif ;
+$font-base:$font-family;
+$font-color:#2b2b2b;
+
+
+// Gray colors for theme
+$gray-lightest:#ffffff;
+$gray-lighter:#f2f2f2;
+$gray-light:#e5e5e5;
+$gray:#c7c7c7;
+$gray-dark:#969696;
+$gray-darker:#646464;
+$gray-darkest:#2b2b2b;
+
+// Classic brand colors
+$color-primary:#EA1717;
+$color-primary--100:#FD7777;
+$color-primary--200:#FD4D4D;
+$color-primary--300:#F42727;
+$color-primary--500:#AA0000;
+$color-primary--600:#8C0000;
+$color-primary--700:#7D0404;
+$color-secondary:#0090EB;
+$color-secondary--100:#E8F5FD;
+$color-secondary--200:#D9EFFC;
+$color-secondary--300:#A1D8F9;
+$color-secondary--500:#269BF0;
+$color-secondary--600:#097CE5;
+$color-secondary--700:#0B56C2;
+$color-tertiary:#012F49;
+$color-tertiary--100:#2E769E;
+$color-tertiary--200:#1D5F85;
+$color-tertiary--300:#084567;
+
+$color-non24h-shipping:rgba(234, 99, 23, 1.0);
+$color-non24h-shipping--200:#F67B36;
+$color-non24h-shipping--500:#D84E00;
+
+$color-success:#1EC688;
+$color-warning:#FED641;
+$color-error:#E76434;
+
+// Gradient brand colors
+$gradient-primary:linear-gradient(270deg, $color-primary 0%, $color-primary--200 100%);
+$gradient-secondary:linear-gradient(110.28deg, #38DDF4 -2.1%, $color-secondary 89.12%);
+$gradient-tertiary:linear-gradient(270deg, #171717 0%, #4E4E4E 100%);
+
+//shadow colors
+$color-shadow--origin:rgba(43,43,43,0.1);
+$color-shadow--focus:rgba(170,0,0,0.4);
+
+

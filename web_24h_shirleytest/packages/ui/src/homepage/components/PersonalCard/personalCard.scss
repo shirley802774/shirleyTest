@@ -1,0 +1,260 @@
+.o-btn--tertiary{	
+	width: 60px;
+	height: 29px;
+}
+//以上登入按鈕暫時寫的，最後要刪掉					
+.c-personalCard{
+	@include mixin.boxShape;
+	@include mixin.flex(space-between, );
+	flex-direction: column;
+	position: relative;
+	padding-top: 12px;
+	height: 498px;	//這邊寫固定高度
+	color: variables.$gray-darkest;
+	font-size: 14px;
+	line-height: 21px;
+	border: 1px solid variables.$color-primary;
+	margin-top: 50px;	// 暫時寫的，最後要刪掉
+	a{
+		color: variables.$gray-darkest;
+		text-decoration: none;
+	}
+	&__shippingSign{
+		position: absolute;
+		top: -47px;
+		left: 0;
+		width: 203px;
+		height: 47px;
+		background-image: url('../../../assets/images/img_shippingSign.svg');
+	}
+	&__greeting{
+		@include mixin.flex;
+		margin-bottom: 4px;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 30px;
+	}
+	&__account{
+		width: 92px;
+		color: variables.$color-primary;
+		overflow: hidden;
+		white-space : nowrap;
+		text-overflow: ellipsis;
+	}
+	&__welcome{
+		@include mixin.flex;
+		font-weight: bold;
+	}
+	&__loginBtn{
+		// display: none;
+	}
+	&__function{
+		@include mixin.flex(space-between, );
+		flex-wrap: wrap;
+		padding: 20px 16px 8px;	
+	}
+	&__fnBtn{
+		@include mixin.flex;
+		flex-direction: column;
+		position: relative;
+		margin-bottom: 8px;
+		width: 76px;
+	}
+	&__iconFn{
+		display: block;
+		width: 48px;
+		height: 48px;
+	}
+	&__bubble{
+		position: absolute;
+		top: -4px;
+		right: 6px;
+		width: 24px;
+		height: 24px;
+		color: variables.$gray-lightest;
+		line-height: 24px;
+		font-size: 12px;
+		font-family: 'Montserrat';	// 字型待確認
+		font-weight: bold;
+		font-style: italic;
+		background-color: variables.$gray-darkest;
+		text-align: center;
+		border-radius: 50%;
+	}
+	&__iconFn--member{
+		background-image: url('../../../assets/images/icon/icon_userFnMember.svg');
+	}
+	&__iconFn--cart{
+		background-image: url('../../../assets/images/icon/icon_userFnCart.svg');
+	}
+	&__iconFn--coupon{
+		background-image: url('../../../assets/images/icon/icon_userFnCoupon.svg');
+	}
+	&__iconFn--wishList{
+		background-image: url('../../../assets/images/icon/icon_userFnWishlist.svg');
+	}
+	&__section{
+		border-top: 1px solid variables.$gray-light;
+		padding: 12px 16px;
+		width: 100%;
+		dt{
+			position: relative;
+			margin-bottom: 14px;
+			font-weight: bold;
+		}
+		&--order{
+			dd{
+				height: 40px;	// 寫固定高，避免無資料時高度不見
+			}
+		}
+		&--seen{
+			flex-basis: 148px;
+			dd{
+				@include mixin.flex(space-around, );
+				height: 82px;	// 寫固定高，避免無資料時高度不見
+			}
+		}
+		&--promo{
+			// display: none;
+			border-top: none;
+			padding-top: 20px;
+			flex: 1 1 auto;
+		}
+		&--marketing{
+			// display: none;
+			flex-basis: 148px;
+		}
+	}
+	&__section--null{
+		dd{
+			@include mixin.flex;
+		}
+		.c-personalCard__ordered{	// 這寫法不知道對不對
+			display: none;
+		}
+		.c-personalCard__nullMsg{
+			display: block;
+		}
+		.c-personalCard__more{
+			display: none;
+		}
+		.c-personalCard__prod{
+			display: none;
+		}
+	}
+	&__more{
+		position: absolute;
+		top: -2px;
+		right: 0;
+		display: block;
+		width: 24px;
+		height: 24px;
+		background-color: #ccc;	// 暫時寫的，最後要刪掉
+	}
+	&__ordered{
+		ul{
+			@include mixin.flex(space-between, );
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
+	&__prodName{
+		width: 100%;
+		font-size: 12px;
+		overflow: hidden;
+		white-space : nowrap;
+		text-overflow: ellipsis;
+	}
+	&__prodCount{
+		color: variables.$gray-dark;
+	}
+	&__prodStatus{
+		color: variables.$color-success;
+	}
+	&__prod{
+		@include mixin.flex;
+		flex-direction: column;
+	}
+	&__prodImg{
+		@include mixin.flex;
+		width: 60px;
+		height: 60px;
+		img{
+			max-width: 100%;
+			max-height: 60px;
+			vertical-align: middle;
+		}
+	}
+	&__prodPrice{
+		margin-top: 4px;
+		color:  variables.$color-primary;
+		//font-family: 'Montserrat';	// 字型待確認
+		font-weight: bold;
+		font-style: italic;
+		line-height: 18px;
+	}
+	&__nullMsg{
+		// display: none;
+		margin-bottom: 12px;	//微調水平位置
+		color: variables.$gray-dark;
+		font-size: 12px;
+	}
+	&--logout{
+	// 	.c-personalCard__welcome{
+	// 		display: none;
+	// 	}
+	// 	.c-personalCard__loginBtn{
+	// 		display: block;
+	// 	}
+	// 	.c-personalCard__function{
+	// 		display: none;
+	// 	}
+	// 	.c-personalCard__section--order{
+	// 		display: none;
+	// 	}
+	// 	.c-personalCard__section--seen{
+	// 		display: none;
+	// 	}
+	// 	.c-personalCard__account{
+	// 		display: none;
+	// 	}
+		.c-personalCard__greeting{
+			color: variables.$color-primary;
+		}
+	// 	.c-personalCard__section--promo{
+	// 		display: block;
+	// 	}
+	// 	.c-personalCard__section--marketing{
+	// 		display: block;
+	// 	}
+	}
+	&__icon{
+		display: block;
+		margin-right: 8px;
+		width: 36px;
+		height: 36px;
+		&--24h{
+			background-image: url('../../../assets/images/icon/icon_24h.svg');
+		}
+		&--coolingOff{
+			background-image: url('../../../assets/images/icon/icon_coolingOff.svg');
+		}
+		&--paying{
+			background-image: url('../../../assets/images/icon/icon_paying.svg');
+		}
+		&--zeroRate{
+			background-image: url('../../../assets/images/icon/icon_zeroRate.svg');
+		}
+	}
+	&__mktImg{
+		width: 161px;
+		height: 118px;
+		background-image: url('../../../assets/images/img_newMemberVoucher.png');
+	}
+	&__slogan{
+		li{
+			@include mixin.flex(flex-start, );
+			margin-bottom: 8px;
+		}
+	}
+}

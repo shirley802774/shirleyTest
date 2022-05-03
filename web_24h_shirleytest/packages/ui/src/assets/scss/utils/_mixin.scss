@@ -1,0 +1,13 @@
+@use './variables';
+@mixin flex($j:center,$a:center){
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin boxShape($bdrs:8px,$v-shadow:4px,$blur:0px,$color: variables.$color-shadow--origin){
+  border-radius: $bdrs;
+  box-shadow: 0px $v-shadow $blur $color;
+}
+
+

@@ -1,0 +1,116 @@
+html {
+  font-family:"Roboto", Helvetica, Arial, sans-serif;
+  box-sizing:border-box;
+  line-height: 1.5;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+}
+
+// Links
+a {
+
+  &:hover {
+  }
+}
+
+
+
+// Lists
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ul {
+}
+
+ol {
+}
+
+ul {
+  ul, ol {
+  }
+}
+
+ol {
+  ol, ul {
+  }
+}
+
+li {
+}
+
+dt {
+}
+
+dd {
+}
+
+
+// Tables
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+table {
+
+  thead th {
+  }
+
+  th,
+  td {
+  }
+
+  th,
+  tfoot td {
+  }
+
+  td {
+  }
+}
+
+// Forms
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+textarea,
+select {
+
+  &:focus {
+  }
+}
+
+input {
+  &[type="email"],
+  &[type="number"],
+  &[type="search"],
+  &[type="text"],
+  &[type="tel"],
+  &[type="url"],
+  &[type="password"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &:focus {
+    }
+  }
+}
+
+textarea {
+}
+
+label {
+}
+
+fieldset {
+}
+
+input {
+  &[type="checkbox"],
+  &[type="radio"] {
+  }
+}
+
