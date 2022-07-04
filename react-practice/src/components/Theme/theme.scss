@@ -35,7 +35,11 @@
 		font-weight: bold;
 	}
 	&__keyWordTags{
-		margin: 0 24px 48px;
+		margin: 0 14px 48px 24px;
+		li{
+			display: inline-block;
+			margin-right: 10px;
+		}
 		& li+li{
 			margin-top: 16px;
 		}
