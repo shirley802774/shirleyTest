@@ -8,7 +8,7 @@ const ProdList = () => {
 	const ListItems =()=>{
 		return data.map((item) =>
 		{
-			console.log(item);
+			// console.log(item);
 
 			return (
 			<li key={item.id}>
