@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./theme.scss";
 import Banner from "../Banner";
 import { data } from '../../data';
+import { switchUrl } from '../../Utils';
 
 const Theme = () => {
 	const [dataTheme, setDataTheme] = useState({Id:undefined,Link:{Text2:undefined}});	//嚴謹一點要帶預設值，避免[]或{}空值
@@ -25,17 +26,6 @@ const Theme = () => {
 			}
 		});
 	}, [data]);
-	
-
-
-	const switchUrl = (urlType) => {
-			switch (urlType){
-				case 'Search':
-					return 'https://ecshweb.pchome.com.tw/search/v3.3/?q=';
-				default:
-					break;
-			}
-	};
 	
 
 
