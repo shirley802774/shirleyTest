@@ -3,10 +3,21 @@
 	flex-direction: column;
 	justify-content: space-between;
 	&__list{
+		width: 620px;
+		height: 540px;
+		overflow: hidden;
+	}
+	&__content{
+		display: flex;
+		flex-wrap: wrap;
+		width: 1860px;
+	}
+	&__group{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		padding: 24px 7px 0;
+		width: 620px;
 		height: 540px;
 		// overflow: hidden;
 		li{

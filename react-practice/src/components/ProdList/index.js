@@ -14,9 +14,11 @@ const ProdList = () => {
 		});
 	}, [data]);
 
+// for(let i = 0; i < dataProd.length; i + 6) {
+// };
 
-	const ListItems =()=>{
-		return dataProd.map((item) =>
+	const ListItems =(start, end)=>{
+		return dataProd.slice(start, end).map((item) =>
 		{
 			return (
 			<li key={item.Id}>
@@ -31,9 +33,13 @@ const ProdList = () => {
 	}
 	return (
 		<div className="c-prodList">
-			<ul className="c-prodList__list">
-				{ListItems()}
-			</ul>
+			<div className="c-prodList__list">
+				<div className="c-prodList__content">
+					<ul className="c-prodList__group">{ListItems(0, 6)}</ul>
+					<ul className="c-prodList__group">{ListItems(6, 12)}</ul>
+					<ul className="c-prodList__group">{ListItems(12, 18)}</ul>
+				</div>
+			</div>
 			<Pagination />
 		</div>
 	);
