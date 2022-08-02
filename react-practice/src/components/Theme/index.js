@@ -1,32 +1,11 @@
 import React, {useState, useEffect} from "react";
 import "./theme.scss";
 import Banner from "../Banner";
-import { data } from '../../data';
+import { data, dataOriginal } from '../../data';
 import { switchUrl } from '../../Utils';
 
-const Theme = () => {
-	const [dataTheme, setDataTheme] = useState({Id:undefined,Link:{Text2:undefined}});	//嚴謹一點要帶預設值，避免[]或{}空值
-	const [dataTag, setDataTag] = useState([]);
-	const [dataProd, setDataProd] = useState([]);
+const Theme = ({ dataTheme, dataTag }) => {
 
-	const addData = (prev, item) => {
-		prev.push(item);
-		return prev;
-	};
-
-
-	useEffect(() => {
-		data.forEach((item) => {
-			if( item.Id === 1){
-				setDataTheme({...item});
-			} else if( item.Id >=2 && item.Id <= 6 ){
-				setDataTag((prev) => [...prev,item]);
-			} else if( item.Id >= 7 ){
-				setDataProd((prev) => addData(prev, item));
-			}
-		});
-	}, [data]);
-	
 
 
 // const a ={c:'test',xxx:''}
@@ -48,6 +27,7 @@ const Theme = () => {
 				</ul> 
 			</div>
 			<Banner />
+			
 		</div>
 	);
 };

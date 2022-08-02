@@ -1,21 +1,16 @@
 import React, {useState, useEffect} from "react";
 import "./prodList.scss";
 import Pagination from "../Pagination";
-import { data } from '../../data';
+import { dataOriginal } from '../../data';
 import { switchUrl } from '../../Utils';
 
-const ProdList = () => {
-	const [dataProd, setDataProd] = useState([]);
-	useEffect(() => {
-		data.forEach((item) => {
-			if( item.Id >= 7 ){
-				setDataProd((prev) => [...prev,item]);
-			}
-		});
-	}, [data]);
+const ProdList = ({ dataProd }) => {
+	const [page, setPage] = useState(1);
 
-// for(let i = 0; i < dataProd.length; i + 6) {
-// };
+	const switchPage = () => {
+		// const total = Math.ceil(dataProd.length / 6);
+		
+	};
 
 	const ListItems =(start, end)=>{
 		return dataProd.slice(start, end).map((item) =>
@@ -40,9 +35,13 @@ const ProdList = () => {
 					<ul className="c-prodList__group">{ListItems(12, 18)}</ul>
 				</div>
 			</div>
-			<Pagination />
+			<Pagination setPage={setPage}/>
 		</div>
 	);
 };
+
+ProdList.propTypes = {
+
+}
 
 export default ProdList;
