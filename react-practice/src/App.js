@@ -1,12 +1,13 @@
 // import logo from './logo.svg';
 import './App.scss';
 import Theme from "./components/Theme";
-
 import ProdList from "./components/ProdList";
 import { useEffect,useState } from 'react';
 import { dataOriginal } from './data';
+import axios from 'axios';
 
 function App() {
+  // const dataOriginal = axios('/index/stage/v1/data&27655702');
   const [dataTheme, setDataTheme] = useState({Id:undefined,Link:{Text2:undefined}});	//嚴謹一點要帶預設值，避免[]或{}空值
 	const [dataTag, setDataTag] = useState([]);
 	const [dataProd, setDataProd] = useState([]);

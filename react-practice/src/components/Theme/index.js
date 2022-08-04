@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "./theme.scss";
 import Banner from "../Banner";
-import { data, dataOriginal } from '../../data';
 import { switchUrl } from '../../Utils';
+import PropTypes from 'prop-types';
 
 const Theme = ({ dataTheme, dataTag }) => {
-
-
 
 // const a ={c:'test',xxx:''}
 	// const tagItems = tag.map((item) =>
@@ -31,5 +29,10 @@ const Theme = ({ dataTheme, dataTag }) => {
 		</div>
 	);
 };
+
+Theme.propTypes = {
+	dataTheme: PropTypes.object.isRequired,
+	dataTag: PropTypes.array.isRequired,
+}
 
 export default Theme;

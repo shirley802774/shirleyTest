@@ -1,19 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./prodList.scss";
 import Pagination from "../Pagination";
-import { dataOriginal } from '../../data';
 import { switchUrl } from '../../Utils';
+import PropTypes from 'prop-types';
 
 const ProdList = ({ dataProd }) => {
 	const [page, setPage] = useState(1);
 
-	const switchPage = () => {
-		// const total = Math.ceil(dataProd.length / 6);
-		
-	};
-
-	const ListItems =(start, end)=>{
-		return dataProd.slice(start, end).map((item) =>
+	const ListItems =(page)=>{
+		return dataProd.slice((page-1)*6, page*6).map((item) =>
 		{
 			return (
 			<li key={item.Id}>
@@ -30,18 +25,19 @@ const ProdList = ({ dataProd }) => {
 		<div className="c-prodList">
 			<div className="c-prodList__list">
 				<div className="c-prodList__content">
-					<ul className="c-prodList__group">{ListItems(0, 6)}</ul>
+					<ul className="c-prodList__group">{ListItems(page)}</ul>
+					{/* <ul className="c-prodList__group">{ListItems(0, 6)}</ul>
 					<ul className="c-prodList__group">{ListItems(6, 12)}</ul>
-					<ul className="c-prodList__group">{ListItems(12, 18)}</ul>
+					<ul className="c-prodList__group">{ListItems(12, 18)}</ul> */}
 				</div>
 			</div>
-			<Pagination setPage={setPage}/>
+			<Pagination dataProd={dataProd} page={page} setPage={setPage}/>
 		</div>
 	);
 };
 
 ProdList.propTypes = {
-
+	dataProd: PropTypes.array.isRequired,
 }
 
 export default ProdList;
