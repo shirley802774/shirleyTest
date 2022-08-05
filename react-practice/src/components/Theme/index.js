@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 const Theme = ({ dataTheme, dataTag }) => {
 
-// const a ={c:'test',xxx:''}
 	// const tagItems = tag.map((item) =>
 	// 	<li key={item.id}><a href="#" className="c-tag">{item.title}</a></li>
 	// );
