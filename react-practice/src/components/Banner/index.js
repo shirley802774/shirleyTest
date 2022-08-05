@@ -1,22 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "./banner.scss";
-import { data } from '../../data';
+// import { data } from '../../data';
+import PropTypes from 'prop-types';
 
-const Banner = () => {
-	const [dataTheme, setDataTheme] = useState({});
-	useEffect(() => {
-		data.forEach((item) => {
-			if( item.Id === 1){
-				setDataTheme({...item});
-			}
-		});
-	}, [data]);
 
+const Banner = ({dataTheme}) => {
 	return (
 		<div className="c-banner">
 			<img src={dataTheme?.Img?.Src} alt="" />
 		</div>
 	);
 };
+
+Banner.propTypes = {
+	dataTheme: PropTypes.object.isRequired,
+}
 
 export default Banner;

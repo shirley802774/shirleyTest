@@ -23,7 +23,7 @@ const Theme = ({ dataTheme, dataTag }) => {
 					)}
 				</ul> 
 			</div>
-			<Banner />
+			<Banner dataTheme={dataTheme} />
 			
 		</div>
 	);
