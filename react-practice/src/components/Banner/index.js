@@ -13,7 +13,20 @@ const Banner = ({dataTheme}) => {
 };
 
 Banner.propTypes = {
-	dataTheme: PropTypes.object.isRequired,
+	dataTheme: PropTypes.objectOf(
+		{
+			Id: PropTypes.number,
+			Link: PropTypes.shape({
+				Text: PropTypes.string,
+				Text2: PropTypes.string,
+				Background: PropTypes.string,
+			}),
+			Img: PropTypes.shape({
+				Src: PropTypes.string,
+				Text: PropTypes.string,
+			})
+		}
+	)
 }
 
 export default Banner;

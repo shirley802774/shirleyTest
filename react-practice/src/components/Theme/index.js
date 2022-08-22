@@ -30,8 +30,32 @@ const Theme = ({ dataTheme, dataTag }) => {
 };
 
 Theme.propTypes = {
-	dataTheme: PropTypes.object.isRequired,
-	dataTag: PropTypes.array.isRequired,
+	dataTheme: PropTypes.objectOf(
+		{
+			Id: PropTypes.number,
+			Link: PropTypes.shape({
+				Text: PropTypes.string,
+				Text2: PropTypes.string,
+				Background: PropTypes.string,
+			}),
+			Img: PropTypes.shape({
+				Src: PropTypes.string,
+				Text: PropTypes.string,
+			})
+		}
+	),
+	dataTag: PropTypes.arrayOf(
+		PropTypes.shape({
+			Id: PropTypes.number,
+			Link: PropTypes.shape({
+				Text: PropTypes.string,
+				Url: PropTypes.string,
+			}),
+			ExtraData: PropTypes.shape({
+				ElementType: PropTypes.string,
+			})
+		})
+	),
 }
 
 export default Theme;

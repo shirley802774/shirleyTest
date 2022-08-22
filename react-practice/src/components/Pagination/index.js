@@ -26,7 +26,23 @@ const Pagination = ({dataProd, page, setPage}) => {
 };
 
 Pagination.propTypes = {
-	dataProd: PropTypes.array.isRequired,
+	dataProd: PropTypes.arrayOf(
+		PropTypes.shape({
+			Id: PropTypes.number,
+			Link: PropTypes.shape({
+				Text: PropTypes.string,
+				Text1: PropTypes.string,
+				Url: PropTypes.string,
+			}),
+			Img: PropTypes.shape({
+				Src: PropTypes.string,
+			}),
+			ExtraData: PropTypes.shape({
+				ElementType: PropTypes.string,
+				Sort: PropTypes.number,
+			})
+		})
+	),
 	page: PropTypes.number.isRequired,
 	setPage: PropTypes.func.isRequired,
 }
