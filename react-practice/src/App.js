@@ -22,11 +22,11 @@ function App() {
   const getDate = () => {
     axios
       .get("/index/stage/v1/data&27655702")
-      .then(function (response) {
+      .then((response) => {
         setRefactorData(response.data.window1.Blocks[0].Nodes);
         // console.log("成功！", response.data.window1.Blocks[0].Nodes);
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
       });
   };
