@@ -14,7 +14,7 @@ const Banner = ({dataTheme}) => {
 
 Banner.propTypes = {
 	dataTheme: PropTypes.objectOf(
-		{
+		PropTypes.shape({
 			Id: PropTypes.number,
 			Link: PropTypes.shape({
 				Text: PropTypes.string,
@@ -25,7 +25,7 @@ Banner.propTypes = {
 				Src: PropTypes.string,
 				Text: PropTypes.string,
 			})
-		}
+		})
 	)
 }
 

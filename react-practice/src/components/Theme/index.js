@@ -31,7 +31,7 @@ const Theme = ({ dataTheme, dataTag }) => {
 
 Theme.propTypes = {
 	dataTheme: PropTypes.objectOf(
-		{
+		PropTypes.shape({
 			Id: PropTypes.number,
 			Link: PropTypes.shape({
 				Text: PropTypes.string,
@@ -42,7 +42,7 @@ Theme.propTypes = {
 				Src: PropTypes.string,
 				Text: PropTypes.string,
 			})
-		}
+		})
 	),
 	dataTag: PropTypes.arrayOf(
 		PropTypes.shape({

@@ -1,12 +1,14 @@
 import "./App.scss";
 import Theme from "./components/Theme";
 import ProdList from "./components/ProdList";
+import ToolBar from "./components/ToolBar";
 import { useEffect, useState } from "react";
 // import { dataOriginal } from './data';
 import axios from "axios";
 
 function App() {
   const [refactorData, setRefactorData] = useState([]);
+  const [tabData, setTabData] = useState([]);
   const [dataTheme, setDataTheme] = useState({
     Id: undefined,
     Link: { Text2: undefined },
@@ -23,8 +25,10 @@ function App() {
     axios
       .get("/index/stage/v1/data&27655702")
       .then((response) => {
-        setRefactorData(response.data.window1.Blocks[0].Nodes);
+        setTabData(response.data.window2.Blocks);
+        setRefactorData(response.data.window2.Blocks[0].Nodes);
         // console.log("成功！", response.data.window1.Blocks[0].Nodes);
+        console.log("成功！", response.data.window2.Blocks);
       })
       .catch((error) => {
         console.log(error);
@@ -50,6 +54,7 @@ function App() {
 
   return (
     <div className="recommend">
+      <ToolBar dataTheme={dataTheme} setDataTheme={setDataTheme} setDataProd={setDataProd} tabData={tabData} />
       <Theme dataTheme={dataTheme} dataTag={dataTag} />
       <ProdList dataProd={dataProd} />
     </div>
