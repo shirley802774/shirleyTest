@@ -49,12 +49,18 @@ function App() {
       } else if (item.Id >= 7) {
         setDataProd((prev) => addData(prev, item));
       }
+      return () => {
+        // 上一次狀態的clear up，清掉上一次執行的東西
+        setDataTheme({});
+        setDataTag({});
+        setDataProd({});
+      };
     });
   }, [refactorData]);
 
   return (
     <div className="recommend">
-      <ToolBar dataTheme={dataTheme} setDataTheme={setDataTheme} setDataProd={setDataProd} tabData={tabData} />
+      <ToolBar setRefactorData={setRefactorData} tabData={tabData} />
       <Theme dataTheme={dataTheme} dataTag={dataTag} />
       <ProdList dataProd={dataProd} />
     </div>
